@@ -42,7 +42,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-const labs = [
+final labs = [
   Lab1(),
   Lab2(),
   Lab3(),
