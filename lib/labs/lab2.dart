@@ -35,16 +35,16 @@ class _Lab2State extends State<Lab2> {
                 },
               ),
             ),
-            SizedBox(height: 20),
-            ...listRandomItems.map((e) => Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Text(
-                    'New Random Number $e',
-                    style: TextStyle(
-                      fontSize: 16
-                    ),
-                  ),
-                ))
+            const SizedBox(height: 20),
+            ...listRandomItems.map(
+              (e) => Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Text(
+                  'New Random Number $e',
+                  style: TextStyle(fontSize: 16),
+                ),
+              ),
+            )
           ],
         ),
       ),
