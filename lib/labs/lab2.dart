@@ -1,10 +1,9 @@
 import 'dart:math';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Lab2 extends StatefulWidget {
-  Lab2({super.key});
+  const Lab2({super.key});
 
   @override
   State<Lab2> createState() => _Lab2State();
@@ -13,35 +12,36 @@ class Lab2 extends StatefulWidget {
 class _Lab2State extends State<Lab2> {
   final Random _random = Random();
 
-  final listRandomItems = <int>[];
+  final randoms = <int>[];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Lab 2 David Daniel'),
-      ),
+      appBar: AppBar(title: const Text('Лаб 2 Семенов Михаил')),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Center(
-              child: CupertinoButton(
-                child: Text('Add Text'),
-                color: Colors.grey,
+              child: MaterialButton(
+                color: Colors.green[700],
                 onPressed: () {
-                  listRandomItems.add(_random.nextInt(1000));
+                  randoms.add(_random.nextInt(10000));
                   setState(() {});
                 },
+                child: const Text(
+                  'Добавить Text',
+                  style: TextStyle(color: Colors.white),
+                ),
               ),
             ),
             const SizedBox(height: 20),
-            ...listRandomItems.map(
+            ...randoms.map(
               (e) => Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Text(
-                  'New Random Number $e',
-                  style: TextStyle(fontSize: 16),
+                  'Число $e',
+                  style: const TextStyle(fontSize: 16),
                 ),
               ),
             )
