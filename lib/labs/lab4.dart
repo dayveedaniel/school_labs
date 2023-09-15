@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class ProductModel {
-  ProductModel({
+class ProductModelLab4 {
+  ProductModelLab4({
     required this.kind,
     required this.title,
     required this.price,
@@ -24,36 +24,36 @@ class Lab4 extends StatefulWidget {
 }
 
 class _Lab4State extends State<Lab4> {
-  List<ProductModel> products = [];
+  List<ProductModelLab4> products = [];
 
   @override
   void initState() {
     products.addAll([
-      ProductModel(
+      ProductModelLab4(
         kind: 'Фрукт',
         title: 'Яблоко',
         price: 21.22,
         weight: 12,
       ),
-      ProductModel(
+      ProductModelLab4(
         kind: 'Фрукт',
         title: 'Банан',
         price: 37.78,
         weight: 5,
       ),
-      ProductModel(
+      ProductModelLab4(
         kind: 'Фрукт',
         title: 'Апельсин',
         price: 3.8,
         weight: 2,
       ),
-      ProductModel(
+      ProductModelLab4(
         kind: 'Овощ',
         title: 'Помидор',
         price: 11.4,
         weight: 47,
       ),
-      ProductModel(
+      ProductModelLab4(
         kind: 'Овощ',
         title: 'Огурец',
         price: 64.33,
@@ -63,19 +63,19 @@ class _Lab4State extends State<Lab4> {
     super.initState();
   }
 
-  void addProductToList(ProductModel newProduct) {
+  void addProductToList(ProductModelLab4 newProduct) {
     products.add(newProduct);
     setState(() {});
   }
 
-  void updateProductData(ProductModel newProduct, int indexInList) {
+  void updateProductData(ProductModelLab4 newProduct, int indexInList) {
     products[indexInList] = newProduct;
     setState(() {});
   }
 
   Future<void> addNewProduct(BuildContext context) async {
-    final ProductModel? newProduct = await Navigator.of(context).push(
-      MaterialPageRoute(builder: (_) => const EditScreen()),
+    final ProductModelLab4? newProduct = await Navigator.of(context).push(
+      MaterialPageRoute(builder: (_) => const EditScreenLab4()),
     );
     if (newProduct != null) addProductToList(newProduct);
   }
@@ -83,10 +83,11 @@ class _Lab4State extends State<Lab4> {
   Future<void> editProduct(
     BuildContext context,
     int indexInList,
-    ProductModel currentProduct,
+    ProductModelLab4 currentProduct,
   ) async {
-    final ProductModel? newProduct = await Navigator.of(context).push(
-      MaterialPageRoute(builder: (_) => EditScreen(product: currentProduct)),
+    final ProductModelLab4? newProduct = await Navigator.of(context).push(
+      MaterialPageRoute(
+          builder: (_) => EditScreenLab4(product: currentProduct)),
     );
     if (newProduct != null) updateProductData(newProduct, indexInList);
   }
@@ -127,20 +128,20 @@ class _Lab4State extends State<Lab4> {
   }
 }
 
-class EditScreen extends StatefulWidget {
-  const EditScreen({
+class EditScreenLab4 extends StatefulWidget {
+  const EditScreenLab4({
     super.key,
     this.product,
   });
 
-  final ProductModel? product;
+  final ProductModelLab4? product;
 
   @override
-  State<EditScreen> createState() => _EditScreenState();
+  State<EditScreenLab4> createState() => _EditScreenLab4State();
 }
 
-class _EditScreenState extends State<EditScreen> {
-  ProductModel? productModel;
+class _EditScreenLab4State extends State<EditScreenLab4> {
+  ProductModelLab4? productModel;
 
   final _typeController = TextEditingController();
   final _nameController = TextEditingController();
@@ -167,7 +168,7 @@ class _EditScreenState extends State<EditScreen> {
         double.tryParse(_priceController.text) != null &&
         _weightController.text.trim().isNotEmpty &&
         double.tryParse(_weightController.text) != null) {
-      productModel = ProductModel(
+      productModel = ProductModelLab4(
         kind: _typeController.text,
         title: _nameController.text,
         weight: double.parse(_weightController.text),
