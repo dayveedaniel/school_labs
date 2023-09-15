@@ -1,8 +1,13 @@
+import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 
 import 'home_page.dart';
 
-void main() {
+List<CameraDescription> cameras = [];
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await _initCamera();
   runApp(const MyApp());
 }
 
@@ -15,5 +20,14 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(primarySwatch: Colors.green),
       home: const MyHomePage(title: 'Моб. Разработка'),
     );
+  }
+}
+
+Future<void> _initCamera() async {
+  try {
+    cameras = await availableCameras();
+  } on CameraException catch (e) {
+    // ignore: avoid_print
+    print(e.code + e.description.toString());
   }
 }
