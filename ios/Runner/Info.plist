@@ -12,6 +12,10 @@
 		<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 		<key>CFBundleInfoDictionaryVersion</key>
 		<string>6.0</string>
+		<key>NSLocationWhenInUseUsageDescription</key>
+		<string>Just need it</string>
+		<key>NSLocationAlwaysUsageDescription</key>
+		<string>Just need bg location</string>
 		<key>CFBundleName</key>
 		<string>school_labs</string>
 		<key>CFBundlePackageType</key>
