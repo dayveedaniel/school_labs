@@ -98,6 +98,12 @@ class _MainGridState extends State<MainGrid>
   void _setVerticalLine(int line) => verticalLineNumber = line;
 
   @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return CustomPaint(
       size: const Size(double.maxFinite, double.maxFinite),
