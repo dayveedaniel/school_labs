@@ -77,7 +77,7 @@ class _MainGridState extends State<MainGrid>
 
   void _initAnimation() {
     _controller = AnimationController(
-      duration: Duration(seconds: 3),
+      duration: const Duration(seconds: 3),
       vsync: this,
     );
 
