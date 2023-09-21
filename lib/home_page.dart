@@ -3,8 +3,8 @@ import 'package:school_labs/labs/lab1.dart';
 import 'package:school_labs/labs/lab10.dart';
 import 'package:school_labs/labs/lab4.dart';
 import 'package:school_labs/labs/lab5/lab5.dart';
-import 'package:school_labs/labs/lab6.dart';
-import 'package:school_labs/labs/lab7.dart';
+import 'package:school_labs/labs/lab6/lab6.dart';
+import 'package:school_labs/labs/lab7/lab7.dart';
 import 'package:school_labs/labs/lab8.dart';
 import 'package:school_labs/labs/lab9.dart';
 
