@@ -1,5 +1,3 @@
-// https://api.github.com/search/repositories?q=Q
-
 import 'dart:convert';
 import 'dart:io';
 
