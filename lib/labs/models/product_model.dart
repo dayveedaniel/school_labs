@@ -17,15 +17,15 @@ class ProductModel {
 
   String get info => ('$kind, $title, $weight кг, $price ₽');
 
-  Map<String, dynamic> toMap() {
-    return <String, dynamic>{
+  Map<String, dynamic> toMap() =>
+     <String, dynamic>{
       'kind': kind,
       'title': title,
       'price': price,
       'weight': weight,
       'filePath': filePath,
     };
-  }
+
 
   static ProductModel fromMap(Map<String, dynamic> map) {
     return ProductModel(

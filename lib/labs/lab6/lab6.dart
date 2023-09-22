@@ -65,7 +65,7 @@ class _Lab6State extends State<Lab6> {
     return GestureDetector(
       onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
       child: Scaffold(
-        appBar: AppBar(title: const Text('Лаб 6 Семенов Михаил')),
+        appBar: AppBar(title: const Text('Lab 6 David Daniel')),
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.fromLTRB(16, 24, 16, 32),

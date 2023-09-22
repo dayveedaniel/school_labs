@@ -85,7 +85,7 @@ class _Lab4State extends State<Lab5> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Лаб 5 Семенов Михаил')),
+      appBar: AppBar(title: const Text('Lab 5 David Daniel')),
       floatingActionButton: FloatingActionButton(
         onPressed: () async => addNewProduct(context),
         child: const Icon(Icons.add),

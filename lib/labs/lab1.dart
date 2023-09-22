@@ -43,7 +43,7 @@ class _Lab1State extends State<Lab1> {
       onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Лаб 1 Семенов Михаил'),
+          title: const Text('Lab 1 David Daniel'),
         ),
         body: Padding(
           padding: const EdgeInsets.all(16.0),

@@ -3,13 +3,13 @@ import 'package:school_labs/labs/lab1.dart';
 import 'package:school_labs/labs/lab10.dart';
 import 'package:school_labs/labs/lab4.dart';
 import 'package:school_labs/labs/lab5/lab5.dart';
-import 'package:school_labs/labs/lab6.dart';
 import 'package:school_labs/labs/lab7.dart';
 import 'package:school_labs/labs/lab8.dart';
 import 'package:school_labs/labs/lab9.dart';
 
 import 'labs/lab2.dart';
 import 'labs/lab3.dart';
+import 'labs/lab6/lab6.dart';
 
 const labs = [
   Lab1(),
@@ -20,8 +20,6 @@ const labs = [
   Lab6(),
   Lab7(),
   Lab8(),
-  Lab9(),
-  Lab10(),
 ];
 
 class MyHomePage extends StatefulWidget {
@@ -43,8 +41,8 @@ class _MyHomePageState extends State<MyHomePage> {
       body: ListView.builder(
         itemCount: labs.length,
         itemBuilder: (_, index) => ListTile(
-          title: Text('Лабораторная ${index + 1}'),
-          shape: const Border(bottom: BorderSide(color: Colors.green)),
+          title: Text('Lab ${index + 1}'),
+          shape: const Border(bottom: BorderSide()),
           onTap: () => Navigator.push(
             context,
             MaterialPageRoute(builder: (_) => labs[index]),

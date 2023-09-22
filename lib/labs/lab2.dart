@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'package:flutter/material.dart';
 
 class Lab2 extends StatefulWidget {
@@ -17,7 +16,7 @@ class _Lab2State extends State<Lab2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Лаб 2 Семенов Михаил')),
+      appBar: AppBar(title: const Text('Lab 2 David Daniel')),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -30,7 +29,7 @@ class _Lab2State extends State<Lab2> {
                   setState(() {});
                 },
                 child: const Text(
-                  'Добавить Text',
+                  'Add Text',
                   style: TextStyle(color: Colors.white),
                 ),
               ),
@@ -40,7 +39,7 @@ class _Lab2State extends State<Lab2> {
               (e) => Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Text(
-                  'Число $e',
+                  'Number $e',
                   style: const TextStyle(fontSize: 16),
                 ),
               ),

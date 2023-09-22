@@ -58,7 +58,7 @@ class _EditScreenState extends State<EditScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Лаб 5 Семенов Михаил'),
+        title: const Text('Lab 5 David Daniel'),
         leading: IconButton(
           icon: const Icon(Icons.chevron_left, size: 35),
           onPressed: () => Navigator.pop(context),

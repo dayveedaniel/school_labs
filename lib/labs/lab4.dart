@@ -13,7 +13,9 @@ class ProductModelLab4 {
   final double price;
   final double weight;
 
-  String get info => ('$kind, $title, $weight кг, $price ₽');
+  String get info => '$kind: $title';
+
+  String get subtitle => ('$weight Kg, $price rubs');
 }
 
 class Lab4 extends StatefulWidget {
@@ -30,34 +32,28 @@ class _Lab4State extends State<Lab4> {
   void initState() {
     products.addAll([
       ProductModelLab4(
-        kind: 'Фрукт',
-        title: 'Яблоко',
-        price: 21.22,
-        weight: 12,
-      ),
-      ProductModelLab4(
-        kind: 'Фрукт',
-        title: 'Банан',
-        price: 37.78,
-        weight: 5,
-      ),
-      ProductModelLab4(
-        kind: 'Фрукт',
-        title: 'Апельсин',
-        price: 3.8,
-        weight: 2,
-      ),
-      ProductModelLab4(
-        kind: 'Овощ',
-        title: 'Помидор',
+        kind: 'Vegetable',
+        title: 'Tomatoes',
         price: 11.4,
         weight: 47,
       ),
       ProductModelLab4(
-        kind: 'Овощ',
-        title: 'Огурец',
-        price: 64.33,
-        weight: 6,
+        kind: 'Fruit',
+        title: 'Apple',
+        price: 21.22,
+        weight: 12,
+      ),
+      ProductModelLab4(
+        kind: 'Vegetable',
+        title: 'Lettuce',
+        price: 37.78,
+        weight: 5,
+      ),
+      ProductModelLab4(
+        kind: 'Fruit',
+        title: 'Oranges',
+        price: 3.8,
+        weight: 2,
       ),
     ]);
     super.initState();
@@ -95,7 +91,7 @@ class _Lab4State extends State<Lab4> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Лаб 4 Семенов Михаил')),
+      appBar: AppBar(title: const Text('Lab 4 David Daniel')),
       floatingActionButton: FloatingActionButton(
         onPressed: () async => addNewProduct(context),
         child: const Icon(Icons.add),
@@ -110,12 +106,17 @@ class _Lab4State extends State<Lab4> {
                 final product = products[index];
 
                 return Card(
-                  shape: RoundedRectangleBorder(
-                    side: const BorderSide(color: Colors.green),
-                    borderRadius: BorderRadius.circular(8),
-                  ),
                   child: ListTile(
                     title: Text(product.info),
+                    trailing: IconButton(
+                      icon: Icon(Icons.cancel),
+                      onPressed: (){
+                        setState(() {
+                          products.removeAt(index);
+                        });
+                      },
+                    ),
+                    subtitle: Text(product.subtitle),
                     onTap: () => editProduct(context, index, product),
                   ),
                 );
@@ -184,19 +185,18 @@ class _EditScreenLab4State extends State<EditScreenLab4> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Лаб 4 Семенов Михаил'),
+        title: const Text('Lab 4 David Daniel'),
         leading: IconButton(
           icon: const Icon(Icons.chevron_left, size: 35),
           onPressed: () => Navigator.pop(context),
         ),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.done, size: 35),
-            onPressed: productModel == null
-                ? null
-                : () => Navigator.pop(context, productModel),
-          ),
-        ],
+        actions: [],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: productModel == null
+            ? null
+            : () => Navigator.pop(context, productModel),
+        child: const Icon(Icons.done, size: 35),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -207,26 +207,26 @@ class _EditScreenLab4State extends State<EditScreenLab4> {
             children: [
               TextFormField(
                 controller: _typeController,
-                decoration: const InputDecoration(labelText: 'Тип'),
+                decoration: const InputDecoration(labelText: 'Name'),
               ),
               const SizedBox(height: 12),
               TextFormField(
                 controller: _nameController,
-                decoration: const InputDecoration(labelText: 'Название'),
+                decoration: const InputDecoration(labelText: 'Type'),
               ),
               const SizedBox(height: 12),
               TextFormField(
                 controller: _priceController,
                 keyboardType:
                     const TextInputType.numberWithOptions(decimal: true),
-                decoration: const InputDecoration(labelText: 'Цена'),
+                decoration: const InputDecoration(labelText: 'Price'),
               ),
               const SizedBox(height: 12),
               TextFormField(
                 controller: _weightController,
                 keyboardType:
                     const TextInputType.numberWithOptions(decimal: true),
-                decoration: const InputDecoration(labelText: 'Масса'),
+                decoration: const InputDecoration(labelText: 'Weight'),
               ),
             ],
           ),

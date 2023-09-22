@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:school_labs/labs/lab1.dart';
 
-const int _wrongAnswersAmount = 3;
+const int _wrongAnswersAmount = 2;
 
 class Lab3 extends StatefulWidget {
   const Lab3({super.key});
@@ -45,7 +45,7 @@ class _Lab3State extends State<Lab3> {
     final double result =
         calculate(firstNum.toDouble(), secondNum.toDouble(), operation)!;
 
-    final String express = '$firstNum $operation $secondNum = ?';
+    final String express = '$firstNum $operation $secondNum = ___';
 
     expression = express;
     correctAnswer = result;
@@ -80,11 +80,6 @@ class _Lab3State extends State<Lab3> {
       if (correctAmount % 5 == 0) {
         maxNumberOfExpression *= 10;
         setState(() {});
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text('Теперь максимальное число $maxNumberOfExpression'),
-          ),
-        );
       }
     } else {
       incorrectAmount++;
@@ -95,7 +90,7 @@ class _Lab3State extends State<Lab3> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Лаб 3 Семенов Михаил')),
+      appBar: AppBar(title: const Text('Lab 3 David Daniel')),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -118,9 +113,7 @@ class _Lab3State extends State<Lab3> {
                     child: Container(
                       padding: const EdgeInsets.all(16.0),
                       decoration: BoxDecoration(
-                        shape: BoxShape.rectangle,
-                        borderRadius: BorderRadius.circular(16),
-                        border: Border.all(color: Colors.green),
+                        border: Border.all(),
                       ),
                       alignment: Alignment.center,
                       child: Text(
@@ -138,16 +131,18 @@ class _Lab3State extends State<Lab3> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Правильных ответов: $correctAmount',
+                    'Correct answers: $correctAmount',
                     style: const TextStyle(
                       fontSize: 16,
+                      color: Colors.greenAccent
                     ),
                   ),
                   const SizedBox(height: 12),
                   Text(
-                    'Неправильных ответов: $incorrectAmount',
+                    'Wrong answers: $incorrectAmount',
                     style: const TextStyle(
                       fontSize: 16,
+                      color: Colors.red,
                     ),
                   ),
                 ],
