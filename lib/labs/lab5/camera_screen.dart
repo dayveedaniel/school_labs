@@ -5,10 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CameraWidget extends StatefulWidget {
-  const CameraWidget(
-    this.camera, {
-    super.key,
-  });
+  const CameraWidget(this.camera, {super.key});
 
   final CameraDescription camera;
 
@@ -84,7 +81,7 @@ class DisplayPictureScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Семенов МД 8К04')),
+      appBar: AppBar(title: const Text('David Daniel 8К01')),
       body: Column(
         children: [
           Image.file(File(imagePath)),
@@ -92,12 +89,12 @@ class DisplayPictureScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               CupertinoButton(
-                child: const Text('Переснять'),
+                child: const Text('Retake'),
                 onPressed: () => Navigator.pop(context),
               ),
               const SizedBox(width: 12),
               CupertinoButton(
-                child: const Text('Принять'),
+                child: const Text('OK'),
                 onPressed: () {
                   Navigator.pop(context);
                   Navigator.pop(context, imagePath);

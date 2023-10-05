@@ -81,26 +81,26 @@ class _EditScreenState extends State<EditScreen> {
             children: [
               TextFormField(
                 controller: _typeController,
-                decoration: const InputDecoration(labelText: 'Тип'),
+                decoration: const InputDecoration(labelText: 'Type'),
               ),
               const SizedBox(height: 12),
               TextFormField(
                 controller: _nameController,
-                decoration: const InputDecoration(labelText: 'Название'),
+                decoration: const InputDecoration(labelText: 'Name'),
               ),
               const SizedBox(height: 12),
               TextFormField(
                 controller: _priceController,
                 keyboardType:
                     const TextInputType.numberWithOptions(decimal: true),
-                decoration: const InputDecoration(labelText: 'Цена'),
+                decoration: const InputDecoration(labelText: 'Price'),
               ),
               const SizedBox(height: 12),
               TextFormField(
                 controller: _weightController,
                 keyboardType:
                     const TextInputType.numberWithOptions(decimal: true),
-                decoration: const InputDecoration(labelText: 'Масса'),
+                decoration: const InputDecoration(labelText: 'Weight'),
               ),
             ],
           ),

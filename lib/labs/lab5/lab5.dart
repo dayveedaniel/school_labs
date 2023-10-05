@@ -109,23 +109,17 @@ class _Lab4State extends State<Lab5> {
                   confirmDismiss: (direction) async =>
                       direction == DismissDirection.endToStart,
                   child: Card(
-                    shape: RoundedRectangleBorder(
-                      side: const BorderSide(color: Colors.green),
-                      borderRadius: BorderRadius.circular(8),
-                    ),
                     child: ListTile(
-                      trailing: IconButton(
-                        onPressed: () async => await addImage(product),
-                        icon: const Icon(Icons.add_a_photo),
+                      leading: CircleAvatar(
+                        child: IconButton(
+                          onPressed: () async => await addImage(product),
+                          icon: product.filePath.isNotEmpty
+                              ? Image.file(File(product.filePath))
+                              : const Icon(Icons.add_a_photo),
+                        ),
                       ),
-                      title: Column(
-                        children: [
-                          Text(product.info),
-                          const SizedBox(height: 10),
-                          if (product.filePath.isNotEmpty)
-                            Image.file(File(product.filePath))
-                        ],
-                      ),
+                      title: Text(product.info),
+                      subtitle: Text(product.subInfo),
                       onTap: () => editProduct(context, index, product),
                     ),
                   ),

@@ -15,7 +15,9 @@ class ProductModel {
   final double weight;
   final String filePath;
 
-  String get info => ('$kind, $title, $weight кг, $price ₽');
+  String get info => '$kind: $title';
+  String get subInfo => '$weight Kg, $price ₽';
+
 
   Map<String, dynamic> toMap() =>
      <String, dynamic>{
